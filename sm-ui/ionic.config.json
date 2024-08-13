@@ -1,0 +1,7 @@
+{
+  "name": "sm-ui",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

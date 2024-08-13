@@ -1,0 +1,20 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+:root {
+    --ion-color-primary: #EC5D54;
+    --ion-color-secondary: #E7EBF2;
+    --ion-color-success: #65E8A1;
+    --ion-color-darkblue: #000C18
+
+    --ion-color: #E7EBF2;
+    --ion-color-step-750: #E7EBF2; 
+
+    --ion-background-color: #000C18;
+    --ion-tab-bar-background: #000C18;
+    --ion-text-color: var(--ion-color-secondary);;
+    --ion-tab-bar-color-selected: var(--ion-color-primary);
+    --ion-tab-bar-color: var(--ion-color-secondary);
+
+    --ion-padding: 16px;
+}
