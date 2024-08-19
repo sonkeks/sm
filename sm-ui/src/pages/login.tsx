@@ -8,25 +8,23 @@ import {
   IonText,
 } from "@ionic/react";
 import "./login.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../AuthContext";
+import { AuthData } from "../models/User";
 
 const Login: React.FC = () => {
-  const [fields, setFields] = useState({
-    username: "",
+  const [fields, setFields] = useState<AuthData>({
+    email: "",
     password: "",
   });
   const history = useHistory();
 
-  const fetchData = () => {
-    setTimeout(() => {
-      console.log("logged in");
-      history.replace("/tabs/overview");
-    }, 500);
-  };
+  const auth = useAuth();
 
   const handleSubmit = () => {
-    fetchData();
+    auth.login(fields);
+    history.replace("/tabs/overview");
   };
 
   return (
@@ -34,17 +32,18 @@ const Login: React.FC = () => {
       <IonContent>
         <div className="center">
           <IonText>
-            <h1>SM</h1>
+            <h1>Logo</h1>
           </IonText>
           <IonInput
             onIonChange={(e) => {
               if (e.detail.value === undefined || e.detail.value === null)
                 return;
-              setFields({ ...fields, username: e.detail.value });
+              setFields({ ...fields, email: e.detail.value });
             }}
             mode="md"
             fill="outline"
-            label="Nutzername"
+            label="Email-Adresse"
+            type="email"
             labelPlacement="stacked"
           ></IonInput>
           <IonInput

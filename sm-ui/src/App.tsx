@@ -22,7 +22,7 @@ import ChastityTab from "./pages/ChastityTab";
 import TasksTab from "./pages/TasksTab";
 import Login from "./pages/login";
 
-import { BsCalendar3 } from "react-icons/bs";
+import AuthProvider from "./AuthProvider";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -54,10 +54,17 @@ import "@ionic/react/css/palettes/dark.system.css";
 /* Theme variables */
 import "./theme/variables.css";
 import Register from "./pages/register";
+import { useAuth } from "./AuthContext";
 
 setupIonicReact();
 
 const Router: React.FC = () => {
+  const auth = useAuth();
+
+  const authRouteCheck = (component: JSX.Element) => {
+    return auth.isAuthenticated ? component : <Redirect to="/login" />;
+  };
+
   return (
     <IonReactRouter>
       <IonRouterOutlet>
@@ -67,7 +74,7 @@ const Router: React.FC = () => {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/tabs" render={() => <TabRouter />} />
+        <Route path="/tabs" render={() => authRouteCheck(<TabRouter />)} />
         <Route exact path="/">
           <Redirect to="/login" />
         </Route>
@@ -124,10 +131,14 @@ const TabRouter: React.FC = () => {
   );
 };
 
-const App: React.FC = () => (
-  <IonApp>
-    <Router />
-  </IonApp>
-);
+const App: React.FC = () => {
+  return (
+    <IonApp>
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
+    </IonApp>
+  );
+};
 
 export default App;

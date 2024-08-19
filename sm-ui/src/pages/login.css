@@ -1,6 +1,6 @@
 .background {
     --background: none;
-    --ion-background-color: linear-gradient(209deg, black, #000C18, var(--ion-color-primary));
+    --ion-background-color: linear-gradient(209deg, black, var(--ion-color-dark), var(--ion-color-primary));
     background-position: center center;
     background-size: cover;
 }
@@ -23,7 +23,16 @@ ion-input {
 }
 
 ion-input:hover {
-    --border-color: white;
+    --border-color: var(--ion-color-light-tint);
+    background-color: transparent !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--ion-color-primary) inset !important;
+    -webkit-text-fill-color: var(--ion-color-light) !important;
 }
 
 .ripple-parent {

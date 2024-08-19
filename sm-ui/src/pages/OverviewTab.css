@@ -1,0 +1,39 @@
+.profileHeader {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.usernameHeader {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.roleHeader {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.statusHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.segmentContainer {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+ion-menu ion-content::part(scroll) {
+    padding: 0;
+    margin: 0;
+}
+
+ion-thumbnail {
+    --border-radius: 40px;
+}

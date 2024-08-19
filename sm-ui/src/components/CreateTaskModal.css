@@ -1,0 +1,55 @@
+ion-datetime-button::part(native) {
+    background: var(--ion-color-dark);
+}
+
+ion-datetime {
+    background: var(--ion-color-secondary);
+    --background: var(--ion-color-secondary);
+    --wheel-highlight-background: var(--ion-color-primary);
+    --wheel-fade-background-rgb: var(--ion-color-secondary-rgb);
+}
+
+ion-datetime::part(time-button) {
+    background: var(--ion-color-dark);
+}
+
+ion-datetime::part(wheel-item active) {
+    color: var(--ion-color-light);
+}
+
+ion-picker {
+    background: var(--ion-color-secondary);
+    --fade-background-rgb: var(--ion-color-secondary);
+    --highlight-background: var(--ion-color-primary); /* Ensure highlight background */
+    --highlight-color: var(--ion-color-primary); /* Set highlight color */
+}
+
+ion-toggle {
+    --track-background: var(--ion-color-dark);
+}
+
+ion-toggle.toggle-checked::part(track) {
+    background: var(--ion-color-primary);
+  }
+
+  .picker-modal {
+    --height: auto;
+    align-items: end;
+  }
+
+  .info-popover {
+    --background: var(--ion-color-tertiary-tint);
+  }
+
+  .info-popover ion-content {
+    --background: var(--ion-color-tertiary-tint);
+  }
+  
+  .picker {
+    margin-bottom: var(--ion-safe-area-bottom);
+  }
+
+.inset-list {
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+}

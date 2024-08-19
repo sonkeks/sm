@@ -10,6 +10,8 @@ import {
 import "./login.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../AuthContext";
+import { AuthData } from "../models/User";
 
 const Register: React.FC = () => {
   const [fields, setFields] = useState({
@@ -20,15 +22,16 @@ const Register: React.FC = () => {
   });
   const history = useHistory();
 
-  const fetchData = () => {
-    setTimeout(() => {
-      console.log("logged in");
-      history.replace("/tabs/overview");
-    }, 500);
-  };
+  const auth = useAuth();
 
   const handleSubmit = () => {
-    fetchData();
+    const authData: AuthData = {
+      username: fields.username,
+      email: fields.email,
+      password: fields.password,
+    };
+    auth.register(authData);
+    history.replace("/tabs/overview");
   };
 
   return (
@@ -36,7 +39,7 @@ const Register: React.FC = () => {
       <IonContent scrollY={false}>
         <div className="center">
           <IonText>
-            <h1>SM</h1>
+            <h1>Logo</h1>
           </IonText>
           <IonInput
             onIonChange={(e) => {

@@ -1,0 +1,29 @@
+.task-item-label {
+    max-width: calc(100% - 53px);
+}
+
+.task-item-label b {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    white-space: nowrap;
+}
+
+.dueDate-group {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.task-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    flex-shrink: 0; /* Verhindert, dass das Badge verkleinert wird */
+    width: 45px;
+}

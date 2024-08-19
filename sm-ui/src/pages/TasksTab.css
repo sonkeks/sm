@@ -1,0 +1,28 @@
+.tasksContent {
+    --padding-start: 0;
+    --padding-end: 0;
+}
+
+.headerContainer {
+    width: 100%;
+    padding-left: var(--ion-padding);
+    padding-right: var(--ion-padding);
+}
+
+.pointsOverviewContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detailContainer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detailContainer h1, .detailContainer h3 {
+    margin: 0;
+}
